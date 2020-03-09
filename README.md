@@ -1,24 +1,64 @@
-# baseball
+# Baseball
 
-A new Flutter project.
+A Flutter project to test the REST API located at https://statsapi.mlb.com/. It uses [MobX](https://github.com/mobxjs/mobx) for state management.
 
-## Getting Started
+## Screenshots
 
-This project is a starting point for a Flutter application.
+### Pixel 2 (5.74 in, 1080×1920 px)
 
-A few resources to get you started if this is your first Flutter project:
+Home Screen | Details Dialog
+--- | ---
+![Main Screen](/screenshots/home_screen.png?raw=true "Main Screen") | ![Timer Dialog](/screenshots/details_screen.png?raw=true "Timer Dialog")
 
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
+## Learn More on Flutter
 
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+Here are a few resources to get you started if you are new to Flutter:
+
+- [Official Flutter documentation](https://flutter.dev/docs)
+- [Flutter youtube channel](https://www.youtube.com/channel/UCwXdFgeE9KYzlDdR7TG9cMw)
+- [Lab: Write your first Flutter app](https://flutter.io/docs/get-started/codelab)
+- [Cookbook: Useful Flutter samples](https://flutter.io/docs/cookbook)
+
+## Created & Maintained by
+
+[Christophe Bonello](https://github.com/cbonello)
+([LinkedIn](https://www.linkedin.com/in/christophe-bonello))
+([Twitter](https://twitter.com/chbonello))
+
+[![Open Source](https://badges.frapsoft.com/os/v1/open-source.svg?v=102)](https://opensource.org/licenses/MIT)
+[![License](https://img.shields.io/badge/license-MIT-purple)](https://github.com/cbonello/amiidex/blob/master/LICENSE)
+
+## Contribution Guidelines
+
+This project is a fully open source project, and contributions are welcome.
 
 ## Credits
 
-https://commons.wikimedia.org/wiki/File:Baseball.svg
+I believe that the image used in this demo app are royalty free. Images were downloaded from:
 
-https://www.publicdomainpictures.net/
+- [MLB Logo](https://freebiesupply.com/logos/major-league-baseball-logo/)
+- [MLB Teams logo](https://freebiesupply.com/s/mlb-logos/)
 
-Logos form [https://freebiesupply.com/logos/major-league-baseball-logo/](https://freebiesupply.com/logos/major-league-baseball-logo/)
+## License
+
+```
+Copyright (c) 2020 Christophe Bonello
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+```
