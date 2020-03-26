@@ -7,7 +7,7 @@ class WebClient {
   const WebClient();
 
   Future<dynamic> get(String url) async {
-    final http.Response response = await http.Client().get(url);
+    final response = await http.Client().get(url);
     switch (response.statusCode) {
       case 200:
         final dynamic decodedJSON = await compute<String, dynamic>(

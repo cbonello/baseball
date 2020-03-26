@@ -17,7 +17,7 @@ class GameCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     // Reduce size and spacing between widgets for small devices.
-    final bool dense = MediaQuery.of(context).size.width < 350;
+    final dense = MediaQuery.of(context).size.width < 350;
 
     return Padding(
       padding: const EdgeInsets.symmetric(vertical: 10.0),

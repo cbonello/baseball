@@ -5,7 +5,7 @@ import 'package:flutter_test/flutter_test.dart';
 
 void main() {
   test('Parses LSOffenseModel', () async {
-    const String contents = '''
+    const contents = '''
 {
   "home": {
     "runs": 10,
@@ -22,9 +22,9 @@ void main() {
 }
 ''';
     final dynamic json = jsonDecode(contents);
-    final LSTeamsModel teams = LSTeamsModel.fromJson(json);
-    final LSInningHomeAwayModel home = LSInningHomeAwayModel.fromJson(json['home']);
-    final LSInningHomeAwayModel away = LSInningHomeAwayModel.fromJson(json['away']);
+    final teams = LSTeamsModel.fromJson(json);
+    final home = LSInningHomeAwayModel.fromJson(json['home']);
+    final away = LSInningHomeAwayModel.fromJson(json['away']);
 
     expect(teams, isNotNull);
     expect(teams.home, home);

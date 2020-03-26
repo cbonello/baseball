@@ -5,7 +5,7 @@ import 'package:flutter_test/flutter_test.dart';
 
 void main() {
   test('Parses LSEntityTeamModel', () async {
-    const String contents = '''
+    const contents = '''
 {
   "id": 147,
   "name": "New York Yankees",
@@ -13,7 +13,7 @@ void main() {
 }
 ''';
     final dynamic json = jsonDecode(contents);
-    final LSEntityTeamModel team = LSEntityTeamModel.fromJson(json);
+    final team = LSEntityTeamModel.fromJson(json);
 
     expect(team.id, 147);
     expect(team.name, 'New York Yankees');

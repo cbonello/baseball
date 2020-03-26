@@ -5,7 +5,7 @@ import 'package:flutter_test/flutter_test.dart';
 
 void main() {
   test('Parses LSOffenseModel', () async {
-    const String contents = '''
+    const contents = '''
 {
   "batter": {
     "id": 592696,
@@ -40,13 +40,13 @@ void main() {
 }
 ''';
     final dynamic json = jsonDecode(contents);
-    final LSOffenseModel offense = LSOffenseModel.fromJson(json);
-    final LSEntityPlayerModel batter = LSEntityPlayerModel.fromJson(json['batter']);
-    final LSEntityPlayerModel onDeck = LSEntityPlayerModel.fromJson(json['onDeck']);
-    final LSEntityPlayerModel inHole = LSEntityPlayerModel.fromJson(json['inHole']);
-    final LSEntityPlayerModel first = LSEntityPlayerModel.fromJson(json['first']);
-    final LSEntityPlayerModel pitcher = LSEntityPlayerModel.fromJson(json['pitcher']);
-    final LSEntityTeamModel team = LSEntityTeamModel.fromJson(json['team']);
+    final offense = LSOffenseModel.fromJson(json);
+    final batter = LSEntityPlayerModel.fromJson(json['batter']);
+    final onDeck = LSEntityPlayerModel.fromJson(json['onDeck']);
+    final inHole = LSEntityPlayerModel.fromJson(json['inHole']);
+    final first = LSEntityPlayerModel.fromJson(json['first']);
+    final pitcher = LSEntityPlayerModel.fromJson(json['pitcher']);
+    final team = LSEntityTeamModel.fromJson(json['team']);
 
     expect(offense, isNotNull);
     expect(offense.batter, batter);
