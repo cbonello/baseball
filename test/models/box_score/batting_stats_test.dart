@@ -5,7 +5,7 @@ import 'package:flutter_test/flutter_test.dart';
 
 void main() {
   test('Parses BSBattingStatsModel', () async {
-    const String contents = '''
+    const contents = '''
 {
   "runs": 1,
   "doubles": 2,
@@ -18,7 +18,7 @@ void main() {
 }
 ''';
     final dynamic json = jsonDecode(contents);
-    final BSBattingStatsModel stats = BSBattingStatsModel.fromJson(json);
+    final stats = BSBattingStatsModel.fromJson(json);
 
     expect(stats, isNotNull);
     expect(stats.runs, 1);
@@ -32,9 +32,9 @@ void main() {
   });
 
   test('Parses BSBattingStatsModel (no data)', () async {
-    const String contents = '{}';
+    const contents = '{}';
     final dynamic json = jsonDecode(contents);
-    final BSBattingStatsModel stats = BSBattingStatsModel.fromJson(json);
+    final stats = BSBattingStatsModel.fromJson(json);
 
     expect(stats, isNotNull);
     expect(stats.runs, isNull);

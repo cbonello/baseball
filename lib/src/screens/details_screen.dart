@@ -57,7 +57,7 @@ class _DetailsScreenState extends State<DetailsScreen> {
 
   @override
   void dispose() {
-    for (final ReactionDisposer d in _disposers) {
+    for (final d in _disposers) {
       d();
     }
     super.dispose();

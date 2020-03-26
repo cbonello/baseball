@@ -18,7 +18,7 @@ void main() {
       TestWidgetsFlutterBinding.ensureInitialized();
 
       // Copy of 'test/support/schedule.json'.
-      const String content = '''
+      const content = '''
 {
   "dates": [{
     "games": [{
@@ -299,14 +299,14 @@ void main() {
       when(webClient.get(any)).thenAnswer((_) {
         return Future<dynamic>.value(json);
       });
-      final MLBApiClient mlbApi = MLBApiClient(webClient);
+      final mlbApi = MLBApiClient(webClient);
 
       await tester.pumpWidget(Provider<ScheduleStore>(
         create: (BuildContext _) => ScheduleStore(mlbApiClient: mlbApi),
         child: MaterialApp(home: HomeScreen()),
       ));
 
-      final Finder calendar = find.byKey(AppWidgetKeys.keys['calendar']);
+      final calendar = find.byKey(AppWidgetKeys.keys['calendar']);
       await tester.tap(calendar);
       await tester.pumpAndSettle();
     });

@@ -1,4 +1,3 @@
-import 'package:baseball/src/models/models.dart';
 import 'package:baseball/src/screens/details_screen.dart';
 import 'package:baseball/src/screens/widgets/error.dart';
 import 'package:baseball/src/screens/widgets/game_card.dart';
@@ -51,7 +50,7 @@ class _HomeScreenState extends State<HomeScreen> {
 
   @override
   void dispose() {
-    for (final ReactionDisposer d in _disposers) {
+    for (final d in _disposers) {
       d();
     }
     super.dispose();
@@ -111,7 +110,7 @@ class _HomeScreenState extends State<HomeScreen> {
                           padding: const EdgeInsets.symmetric(vertical: 10.0),
                           itemCount: _scheduleStore.schedule.games.length,
                           itemBuilder: (BuildContext context, int index) {
-                            final SCGameModel game = _scheduleStore.schedule.games[index];
+                            final game = _scheduleStore.schedule.games[index];
 
                             return Hero(
                               tag: game.toString(),
@@ -146,10 +145,10 @@ class _HomeScreenState extends State<HomeScreen> {
   String _formatDate() => formatDate(_selectedDate, <String>[dd, '/', mm, '/', yyyy]);
 
   String _getAppTitle() {
-    final DateTime now = DateTime.now();
-    final DateTime today = DateTime(now.year, now.month, now.day);
-    final DateTime yesterday = DateTime(now.year, now.month, now.day - 1);
-    final DateTime tomorrow = DateTime(now.year, now.month, now.day + 1);
+    final now = DateTime.now();
+    final today = DateTime(now.year, now.month, now.day);
+    final yesterday = DateTime(now.year, now.month, now.day - 1);
+    final tomorrow = DateTime(now.year, now.month, now.day + 1);
 
     if (_selectedDate == today) {
       return 'TODAY\'S GAMES';
@@ -158,13 +157,13 @@ class _HomeScreenState extends State<HomeScreen> {
     } else if (_selectedDate == tomorrow) {
       return 'TOMORROW\'S GAMES';
     } else {
-      final String day = _formatDate();
+      final day = _formatDate();
       return 'GAMES ON $day';
     }
   }
 
   Future<void> _selectDate(BuildContext context) async {
-    final DateTime picked = await showDatePicker(
+    final picked = await showDatePicker(
       context: context,
       initialDate: _selectedDate,
       firstDate: DateTime(2000, 1),
@@ -178,7 +177,7 @@ class _HomeScreenState extends State<HomeScreen> {
   }
 
   void _getTodaysSchedule() {
-    final String day = _formatDate();
+    final day = _formatDate();
     _scheduleStore.geSchedule(day);
   }
 }

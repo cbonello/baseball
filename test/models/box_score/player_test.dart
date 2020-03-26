@@ -5,7 +5,7 @@ import 'package:flutter_test/flutter_test.dart';
 
 void main() {
   test('Parses BSPlayerModel', () async {
-    const String contents = '''
+    const contents = '''
 {
   "person": {
     "fullName": "Jake Cave"
@@ -57,16 +57,14 @@ void main() {
   "gameStatus": {}
 }''';
     final dynamic json = jsonDecode(contents);
-    final BSPlayerModel player = BSPlayerModel.fromJson(json);
+    final player = BSPlayerModel.fromJson(json);
     expect(player, isNotNull);
     expect(json['position'], isNotNull);
     expect(json['stats'], isNotNull);
 
-    final BSPositionModel position = BSPositionModel.fromJson(json['position']);
-    final BSBattingStatsModel battingStats =
-        BSBattingStatsModel.fromJson(json['stats']['batting']);
-    final BSPitchingStatsModel pitchingStats =
-        BSPitchingStatsModel.fromJson(json['stats']['pitching']);
+    final position = BSPositionModel.fromJson(json['position']);
+    final battingStats = BSBattingStatsModel.fromJson(json['stats']['batting']);
+    final pitchingStats = BSPitchingStatsModel.fromJson(json['stats']['pitching']);
 
     expect(player.fullName, 'Jake Cave');
     expect(player.jerseyNumber, '60');

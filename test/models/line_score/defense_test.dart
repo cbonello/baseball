@@ -5,7 +5,7 @@ import 'package:flutter_test/flutter_test.dart';
 
 void main() {
   test('Parses LSEntityPlayerModel', () async {
-    const String contents = '''
+    const contents = '''
 {
   "pitcher": {
     "id": 547973,
@@ -75,20 +75,20 @@ void main() {
 }
 ''';
     final dynamic json = jsonDecode(contents);
-    final LSDefenseModel defense = LSDefenseModel.fromJson(json);
-    final LSEntityPlayerModel pitcher = LSEntityPlayerModel.fromJson(json['pitcher']);
-    final LSEntityPlayerModel catcher = LSEntityPlayerModel.fromJson(json['catcher']);
-    final LSEntityPlayerModel first = LSEntityPlayerModel.fromJson(json['first']);
-    final LSEntityPlayerModel second = LSEntityPlayerModel.fromJson(json['second']);
-    final LSEntityPlayerModel third = LSEntityPlayerModel.fromJson(json['third']);
-    final LSEntityPlayerModel shortstop = LSEntityPlayerModel.fromJson(json['shortstop']);
-    final LSEntityPlayerModel left = LSEntityPlayerModel.fromJson(json['left']);
-    final LSEntityPlayerModel center = LSEntityPlayerModel.fromJson(json['center']);
-    final LSEntityPlayerModel right = LSEntityPlayerModel.fromJson(json['right']);
-    final LSEntityPlayerModel batter = LSEntityPlayerModel.fromJson(json['batter']);
-    final LSEntityPlayerModel onDeck = LSEntityPlayerModel.fromJson(json['onDeck']);
-    final LSEntityPlayerModel inHole = LSEntityPlayerModel.fromJson(json['inHole']);
-    final LSEntityTeamModel team = LSEntityTeamModel.fromJson(json['team']);
+    final defense = LSDefenseModel.fromJson(json);
+    final pitcher = LSEntityPlayerModel.fromJson(json['pitcher']);
+    final catcher = LSEntityPlayerModel.fromJson(json['catcher']);
+    final first = LSEntityPlayerModel.fromJson(json['first']);
+    final second = LSEntityPlayerModel.fromJson(json['second']);
+    final third = LSEntityPlayerModel.fromJson(json['third']);
+    final shortstop = LSEntityPlayerModel.fromJson(json['shortstop']);
+    final left = LSEntityPlayerModel.fromJson(json['left']);
+    final center = LSEntityPlayerModel.fromJson(json['center']);
+    final right = LSEntityPlayerModel.fromJson(json['right']);
+    final batter = LSEntityPlayerModel.fromJson(json['batter']);
+    final onDeck = LSEntityPlayerModel.fromJson(json['onDeck']);
+    final inHole = LSEntityPlayerModel.fromJson(json['inHole']);
+    final team = LSEntityTeamModel.fromJson(json['team']);
 
     expect(defense, isNotNull);
     expect(defense.pitcher, pitcher);

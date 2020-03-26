@@ -17,31 +17,31 @@ class BoxScoreModel extends Equatable {
     final Map<String, dynamic> teamsHome = walkMap(json, <String>['teams', 'home']);
     final Map<String, dynamic> playerHome = walkMap(teamsHome, <String>['players']);
 
-    final List<BSPlayerModel> awayPitchers = <BSPlayerModel>[];
+    final awayPitchers = <BSPlayerModel>[];
     final List<int> awayPitchersID =
         teamsAway == null ? null : teamsAway['pitchers']?.cast<int>();
-    for (final int id in awayPitchersID ?? <int>[]) {
+    for (final id in awayPitchersID ?? <int>[]) {
       awayPitchers.add(BSPlayerModel.fromJson(playersAway['ID$id']));
     }
 
-    final List<BSPlayerModel> homePitchers = <BSPlayerModel>[];
+    final homePitchers = <BSPlayerModel>[];
     final List<int> homePitchersID =
         teamsHome == null ? null : teamsHome['pitchers']?.cast<int>();
-    for (final int id in homePitchersID ?? <int>[]) {
+    for (final id in homePitchersID ?? <int>[]) {
       homePitchers.add(BSPlayerModel.fromJson(playerHome['ID$id']));
     }
 
-    final List<BSPlayerModel> awayBatters = <BSPlayerModel>[];
+    final awayBatters = <BSPlayerModel>[];
     final List<int> awayBattersID =
         teamsAway == null ? null : teamsAway['batters']?.cast<int>();
-    for (final int id in awayBattersID ?? <int>[]) {
+    for (final id in awayBattersID ?? <int>[]) {
       awayBatters.add(BSPlayerModel.fromJson(playersAway['ID$id']));
     }
 
-    final List<BSPlayerModel> homeBatters = <BSPlayerModel>[];
+    final homeBatters = <BSPlayerModel>[];
     final List<int> homeBattersID =
         teamsHome == null ? null : teamsHome['batters']?.cast<int>();
-    for (final int id in homeBattersID ?? <int>[]) {
+    for (final id in homeBattersID ?? <int>[]) {
       homeBatters.add(BSPlayerModel.fromJson(playerHome['ID$id']));
     }
 

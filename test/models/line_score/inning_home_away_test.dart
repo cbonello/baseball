@@ -5,7 +5,7 @@ import 'package:flutter_test/flutter_test.dart';
 
 void main() {
   test('Parses LSInningHomeAwayModel', () async {
-    const String contents = '''
+    const contents = '''
 {
   "runs": 10,
   "hits": 8,
@@ -14,7 +14,7 @@ void main() {
 }
 ''';
     final dynamic json = jsonDecode(contents);
-    final LSInningHomeAwayModel ha = LSInningHomeAwayModel.fromJson(json);
+    final ha = LSInningHomeAwayModel.fromJson(json);
 
     expect(ha.runs, 10);
     expect(ha.hits, 8);
