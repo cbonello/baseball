@@ -5,7 +5,7 @@ import 'package:flutter_test/flutter_test.dart';
 
 void main() {
   test('Parses SCGameModel', () async {
-    const String contents = '''
+    const contents = '''
 {
   "gamePk": 599337,
   "gameDate": "2019-10-04T18:05:00Z",
@@ -42,7 +42,7 @@ void main() {
 }
 ''';
     final dynamic json = jsonDecode(contents);
-    final SCGameModel game = SCGameModel.fromJson(json);
+    final game = SCGameModel.fromJson(json);
 
     expect(game, isNotNull);
     expect(game.gamePk, 599337);

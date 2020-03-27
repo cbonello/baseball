@@ -14,27 +14,27 @@ class MLBApiClient {
   static const String baseURL = 'https://statsapi.mlb.com/api/v1';
 
   String gameScheduleUrl(String date) {
-    const String queryFields =
+    const queryFields =
         'dates,games,gamePk,gameDate,status,detailedState,venue,teams,score,leagueRecord,wins,losses,team,name,isWinner';
-    final String url =
+    final url =
         '$baseURL/schedule/?sportId=1&startDate=$date&endDate=$date&fields=$queryFields';
     return url;
   }
 
   String gameLinescoreUrl(String gameId) {
-    final String url = '$baseURL/game/$gameId/linescore';
+    final url = '$baseURL/game/$gameId/linescore';
     return url;
   }
 
   String gameBoxscoreUrl(String gameId) {
-    const String queryFields =
+    const queryFields =
         'teams,record,wins,losses,players,fullName,position,name,type,abbreviation,stats,batting,doubles,triples,homeRuns,strikeOuts,fielding,assists,errors,putOuts,pitching,runs,atBats,hits,rbi,inningsPitched,strikeOuts';
-    final String url = '$baseURL/game/$gameId/boxscore?fields=$queryFields';
+    final url = '$baseURL/game/$gameId/boxscore?fields=$queryFields';
     return url;
   }
 
   Future<SCScheduleModel> getGameSchedule(String date) async {
-    final String url = gameScheduleUrl(date);
+    final url = gameScheduleUrl(date);
     final Map<String, dynamic> json = await client.get(url);
 
     assert(json['dates'] != null);
@@ -52,13 +52,13 @@ class MLBApiClient {
   }
 
   Future<LineScoreModel> getGameLinescoreSchedule(String gameId) async {
-    final String url = gameLinescoreUrl(gameId);
+    final url = gameLinescoreUrl(gameId);
     final Map<String, dynamic> json = await client.get(url);
 
     // throw Exception('Bar error');
 
     try {
-      final LineScoreModel lineScore = LineScoreModel.fromJson(json);
+      final lineScore = LineScoreModel.fromJson(json);
       return lineScore;
     } catch (exception) {
       throw Exception('Unexpected data received from server');
@@ -66,11 +66,11 @@ class MLBApiClient {
   }
 
   Future<BoxScoreModel> getGameBoxscoreSchedule(String gameId) async {
-    final String url = gameBoxscoreUrl(gameId);
+    final url = gameBoxscoreUrl(gameId);
     final Map<String, dynamic> json = await client.get(url);
 
     try {
-      final BoxScoreModel boxScore = BoxScoreModel.fromJson(json);
+      final boxScore = BoxScoreModel.fromJson(json);
       return boxScore;
     } catch (exception) {
       throw Exception('Unexpected data received from server');

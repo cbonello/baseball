@@ -20,7 +20,7 @@ class TabSelector extends StatelessWidget {
   Widget build(BuildContext context) {
     return LayoutBuilder(
       builder: (BuildContext _, BoxConstraints constraints) {
-        final double width = math.min(constraints.maxWidth * 0.6, 400);
+        final width = math.min(constraints.maxWidth * 0.6, 400);
 
         return Row(
           mainAxisAlignment: MainAxisAlignment.center,

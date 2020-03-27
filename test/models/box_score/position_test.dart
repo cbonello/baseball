@@ -5,7 +5,7 @@ import 'package:flutter_test/flutter_test.dart';
 
 void main() {
   test('Parses BSPositionModel', () async {
-    const String contents = '''
+    const contents = '''
 {
   "name": "Shortstop",
   "type": "Infielder",
@@ -13,7 +13,7 @@ void main() {
 }
 ''';
     final dynamic json = jsonDecode(contents);
-    final BSPositionModel position = BSPositionModel.fromJson(json);
+    final position = BSPositionModel.fromJson(json);
 
     expect(position, isNotNull);
     expect(position.name, 'Shortstop');

@@ -5,7 +5,7 @@ import 'package:flutter_test/flutter_test.dart';
 
 void main() {
   test('Parses LSEntityPlayerModel', () async {
-    const String contents = '''
+    const contents = '''
 {
   "id": 544369,
   "fullName": "Didi Gregorius",
@@ -13,7 +13,7 @@ void main() {
 }
 ''';
     final dynamic json = jsonDecode(contents);
-    final LSEntityPlayerModel player = LSEntityPlayerModel.fromJson(json);
+    final player = LSEntityPlayerModel.fromJson(json);
 
     expect(player.id, 544369);
     expect(player.fullName, 'Didi Gregorius');

@@ -27,7 +27,10 @@ dev_dependencies:
   json_serializable: ^3.2.5
   mobx_codegen: ^1.0.2
   mockito: ^4.1.1
-  pedantic: ^1.8.0
+  pedantic: ^1.8.0+1
+
+dependency_overrides:
+  pedantic: 1.9.0
 
 flutter:
   uses-material-design: true

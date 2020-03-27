@@ -56,7 +56,7 @@ class _PlayersStatState extends State<PlayersStat> {
 
   @override
   void dispose() {
-    for (final ReactionDisposer d in _disposers) {
+    for (final d in _disposers) {
       d();
     }
     super.dispose();
