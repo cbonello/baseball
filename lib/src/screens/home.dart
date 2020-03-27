@@ -143,7 +143,7 @@ class _HomeScreenState extends State<HomeScreen> {
     );
   }
 
-  String _formatDate() => formatDate(_selectedDate, <String>[dd, '/', mm, '/', yyyy]);
+  String _formatDate() => formatDate(_selectedDate, <String>[mm, '/', dd, '/', yyyy]);
 
   String _getAppTitle() {
     final DateTime now = DateTime.now();
