@@ -17,7 +17,7 @@ abstract class _LineScoreStore with Store {
   final MLBApiClient _mlbApiClient;
 
   @observable
-  ObservableFuture<LineScoreModel> _lineScoreFuture;
+  ObservableFuture<LineScoreModel> lineScoreFuture;
   @observable
   LineScoreModel lineScore;
 
@@ -26,10 +26,10 @@ abstract class _LineScoreStore with Store {
 
   @computed
   LineScoreStoreState get state {
-    if (_lineScoreFuture == null || _lineScoreFuture.status == FutureStatus.rejected) {
+    if (lineScoreFuture == null || lineScoreFuture.status == FutureStatus.rejected) {
       return LineScoreStoreState.initial;
     }
-    return _lineScoreFuture.status == FutureStatus.pending
+    return lineScoreFuture.status == FutureStatus.pending
         ? LineScoreStoreState.loading
         : LineScoreStoreState.loaded;
   }
@@ -38,10 +38,10 @@ abstract class _LineScoreStore with Store {
   Future<void> geSchedule(String gameId) async {
     try {
       errorMessage = null;
-      _lineScoreFuture = ObservableFuture<LineScoreModel>(
+      lineScoreFuture = ObservableFuture<LineScoreModel>(
         _mlbApiClient.getGameLinescoreSchedule(gameId),
       );
-      lineScore = await _lineScoreFuture;
+      lineScore = await lineScoreFuture;
     } catch (exception) {
       errorMessage = exception.message;
     }

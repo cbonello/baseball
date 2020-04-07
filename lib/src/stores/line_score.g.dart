@@ -16,21 +16,21 @@ mixin _$LineScoreStore on _LineScoreStore, Store {
       (_$stateComputed ??= Computed<LineScoreStoreState>(() => super.state))
           .value;
 
-  final _$_lineScoreFutureAtom = Atom(name: '_LineScoreStore._lineScoreFuture');
+  final _$lineScoreFutureAtom = Atom(name: '_LineScoreStore.lineScoreFuture');
 
   @override
-  ObservableFuture<LineScoreModel> get _lineScoreFuture {
-    _$_lineScoreFutureAtom.context.enforceReadPolicy(_$_lineScoreFutureAtom);
-    _$_lineScoreFutureAtom.reportObserved();
-    return super._lineScoreFuture;
+  ObservableFuture<LineScoreModel> get lineScoreFuture {
+    _$lineScoreFutureAtom.context.enforceReadPolicy(_$lineScoreFutureAtom);
+    _$lineScoreFutureAtom.reportObserved();
+    return super.lineScoreFuture;
   }
 
   @override
-  set _lineScoreFuture(ObservableFuture<LineScoreModel> value) {
-    _$_lineScoreFutureAtom.context.conditionallyRunInAction(() {
-      super._lineScoreFuture = value;
-      _$_lineScoreFutureAtom.reportChanged();
-    }, _$_lineScoreFutureAtom, name: '${_$_lineScoreFutureAtom.name}_set');
+  set lineScoreFuture(ObservableFuture<LineScoreModel> value) {
+    _$lineScoreFutureAtom.context.conditionallyRunInAction(() {
+      super.lineScoreFuture = value;
+      _$lineScoreFutureAtom.reportChanged();
+    }, _$lineScoreFutureAtom, name: '${_$lineScoreFutureAtom.name}_set');
   }
 
   final _$lineScoreAtom = Atom(name: '_LineScoreStore.lineScore');
@@ -77,7 +77,7 @@ mixin _$LineScoreStore on _LineScoreStore, Store {
   @override
   String toString() {
     final string =
-        'lineScore: ${lineScore.toString()},errorMessage: ${errorMessage.toString()},state: ${state.toString()}';
+        'lineScoreFuture: ${lineScoreFuture.toString()},lineScore: ${lineScore.toString()},errorMessage: ${errorMessage.toString()},state: ${state.toString()}';
     return '{$string}';
   }
 }

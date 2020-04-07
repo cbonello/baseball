@@ -16,21 +16,21 @@ mixin _$ScheduleStore on _ScheduleStore, Store {
       (_$stateComputed ??= Computed<ScheduleStoreState>(() => super.state))
           .value;
 
-  final _$_scheduleFutureAtom = Atom(name: '_ScheduleStore._scheduleFuture');
+  final _$scheduleFutureAtom = Atom(name: '_ScheduleStore.scheduleFuture');
 
   @override
-  ObservableFuture<SCScheduleModel> get _scheduleFuture {
-    _$_scheduleFutureAtom.context.enforceReadPolicy(_$_scheduleFutureAtom);
-    _$_scheduleFutureAtom.reportObserved();
-    return super._scheduleFuture;
+  ObservableFuture<SCScheduleModel> get scheduleFuture {
+    _$scheduleFutureAtom.context.enforceReadPolicy(_$scheduleFutureAtom);
+    _$scheduleFutureAtom.reportObserved();
+    return super.scheduleFuture;
   }
 
   @override
-  set _scheduleFuture(ObservableFuture<SCScheduleModel> value) {
-    _$_scheduleFutureAtom.context.conditionallyRunInAction(() {
-      super._scheduleFuture = value;
-      _$_scheduleFutureAtom.reportChanged();
-    }, _$_scheduleFutureAtom, name: '${_$_scheduleFutureAtom.name}_set');
+  set scheduleFuture(ObservableFuture<SCScheduleModel> value) {
+    _$scheduleFutureAtom.context.conditionallyRunInAction(() {
+      super.scheduleFuture = value;
+      _$scheduleFutureAtom.reportChanged();
+    }, _$scheduleFutureAtom, name: '${_$scheduleFutureAtom.name}_set');
   }
 
   final _$scheduleAtom = Atom(name: '_ScheduleStore.schedule');
@@ -77,7 +77,7 @@ mixin _$ScheduleStore on _ScheduleStore, Store {
   @override
   String toString() {
     final string =
-        'schedule: ${schedule.toString()},errorMessage: ${errorMessage.toString()},state: ${state.toString()}';
+        'scheduleFuture: ${scheduleFuture.toString()},schedule: ${schedule.toString()},errorMessage: ${errorMessage.toString()},state: ${state.toString()}';
     return '{$string}';
   }
 }

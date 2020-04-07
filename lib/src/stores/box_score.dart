@@ -17,7 +17,7 @@ abstract class _BoxScoreStore with Store {
   final MLBApiClient _mlbApiClient;
 
   @observable
-  ObservableFuture<BoxScoreModel> _lineScoreFuture;
+  ObservableFuture<BoxScoreModel> boxScoreFuture;
   @observable
   BoxScoreModel boxScore;
 
@@ -26,10 +26,10 @@ abstract class _BoxScoreStore with Store {
 
   @computed
   BoxScoreStoreState get state {
-    if (_lineScoreFuture == null || _lineScoreFuture.status == FutureStatus.rejected) {
+    if (boxScoreFuture == null || boxScoreFuture.status == FutureStatus.rejected) {
       return BoxScoreStoreState.initial;
     }
-    return _lineScoreFuture.status == FutureStatus.pending
+    return boxScoreFuture.status == FutureStatus.pending
         ? BoxScoreStoreState.loading
         : BoxScoreStoreState.loaded;
   }
@@ -38,10 +38,10 @@ abstract class _BoxScoreStore with Store {
   Future<void> geSchedule(String gameId) async {
     try {
       errorMessage = null;
-      _lineScoreFuture = ObservableFuture<BoxScoreModel>(
+      boxScoreFuture = ObservableFuture<BoxScoreModel>(
         _mlbApiClient.getGameBoxscoreSchedule(gameId),
       );
-      boxScore = await _lineScoreFuture;
+      boxScore = await boxScoreFuture;
     } catch (exception) {
       errorMessage = exception.message;
     }

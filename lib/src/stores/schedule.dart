@@ -17,7 +17,8 @@ abstract class _ScheduleStore with Store {
   final MLBApiClient _mlbApiClient;
 
   @observable
-  ObservableFuture<SCScheduleModel> _scheduleFuture;
+  ObservableFuture<SCScheduleModel> scheduleFuture;
+
   @observable
   SCScheduleModel schedule;
 
@@ -26,10 +27,10 @@ abstract class _ScheduleStore with Store {
 
   @computed
   ScheduleStoreState get state {
-    if (_scheduleFuture == null || _scheduleFuture.status == FutureStatus.rejected) {
+    if (scheduleFuture == null || scheduleFuture.status == FutureStatus.rejected) {
       return ScheduleStoreState.initial;
     }
-    return _scheduleFuture.status == FutureStatus.pending
+    return scheduleFuture.status == FutureStatus.pending
         ? ScheduleStoreState.loading
         : ScheduleStoreState.loaded;
   }
@@ -38,10 +39,10 @@ abstract class _ScheduleStore with Store {
   Future<void> geSchedule(String date) async {
     try {
       errorMessage = null;
-      _scheduleFuture = ObservableFuture<SCScheduleModel>(
+      scheduleFuture = ObservableFuture<SCScheduleModel>(
         _mlbApiClient.getGameSchedule(date),
       );
-      schedule = await _scheduleFuture;
+      schedule = await scheduleFuture;
     } catch (exception) {
       errorMessage = exception.message;
     }

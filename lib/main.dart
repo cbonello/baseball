@@ -23,7 +23,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'SimpleBet',
+      title: 'Baseball',
       debugShowCheckedModeBanner: false,
       locale: DevicePreview.of(context).locale,
       builder: DevicePreview.appBuilder,
