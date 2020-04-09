@@ -8,8 +8,17 @@ part 'schedule.g.dart';
 class SCScheduleModel extends Equatable {
   const SCScheduleModel(this.games);
 
-  factory SCScheduleModel.fromJson(Map<String, dynamic> json) =>
-      _$SCScheduleModelFromJson(json);
+  factory SCScheduleModel.fromJson(Map<String, dynamic> json) {
+    final schedule = _$SCScheduleModelFromJson(json);
+
+    // API may returns games with no away team when a game was cancelled.
+    // Example: March 12th, 2020.
+    return SCScheduleModel(
+      schedule.games
+          .where((SCGameModel game) => game.awayTeamId != null && game.homeTeamId != null)
+          .toList(),
+    );
+  }
 
   @JsonKey(required: true)
   final List<SCGameModel> games;
