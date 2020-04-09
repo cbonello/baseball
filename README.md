@@ -2,6 +2,8 @@
 
 A Flutter project to test the REST API located at https://statsapi.mlb.com/. It uses [MobX](https://github.com/mobxjs/mobx) for state management.
 
+Project is compatible with Flutter web ([live demo](https://baseball-9d98f.web.app)) 
+
 ## Screenshots
 
 ### Pixel 2 (5.74 in, 1080×1920 px)
@@ -18,6 +20,11 @@ Here are a few resources to get you started if you are new to Flutter:
 - [Flutter youtube channel](https://www.youtube.com/channel/UCwXdFgeE9KYzlDdR7TG9cMw)
 - [Lab: Write your first Flutter app](https://flutter.io/docs/get-started/codelab)
 - [Cookbook: Useful Flutter samples](https://flutter.io/docs/cookbook)
+
+## Resources
+
+- [Building a web application with Flutter](https://flutter.dev/docs/get-started/web)
+- [Must try: Use Firebase to host your Flutter app on the web](https://medium.com/flutter/must-try-use-firebase-to-host-your-flutter-app-on-the-web-852ee533a469)
 
 ## Created & Maintained by
 
