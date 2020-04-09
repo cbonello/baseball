@@ -29,35 +29,39 @@ class _SplashScreenState extends State<SplashScreen> {
     return SafeArea(
       child: Scaffold(
         backgroundColor: Colors.white,
-        body: Center(
-          child: Column(
-            children: <Widget>[
-              const Spacer(flex: 2),
-              FractionallySizedBox(
-                widthFactor: 0.6,
-                child: _mlbLogo,
+        body: LayoutBuilder(
+          builder: (_, BoxConstraints constraints) {
+            return Center(
+              child: Column(
+                children: <Widget>[
+                  const Spacer(flex: 2),
+                  Container(
+                    height: constraints.maxHeight * 0.4,
+                    child: _mlbLogo,
+                  ),
+                  const Text(
+                    'powered by',
+                    style: TextStyle(
+                      color: Colors.black,
+                      fontSize: 20.0,
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
+                  const SizedBox(height: 40.0),
+                  const Text(
+                    'statsapi.mlb.com',
+                    style: TextStyle(
+                      color: Colors.black,
+                      fontFamily: 'roboto_mono',
+                      fontSize: 24.0,
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
+                  const Spacer(flex: 3),
+                ],
               ),
-              const Text(
-                'powered by',
-                style: TextStyle(
-                  color: Colors.black,
-                  fontSize: 20.0,
-                  fontWeight: FontWeight.bold,
-                ),
-              ),
-              const SizedBox(height: 40.0),
-              const Text(
-                'statsapi.mlb.com',
-                style: TextStyle(
-                  color: Colors.black,
-                  fontFamily: 'roboto_mono',
-                  fontSize: 24.0,
-                  fontWeight: FontWeight.bold,
-                ),
-              ),
-              const Spacer(flex: 3),
-            ],
-          ),
+            );
+          },
         ),
       ),
     );
