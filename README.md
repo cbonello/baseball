@@ -39,6 +39,10 @@ Here are a few resources to get you started if you are new to Flutter:
 
 This project is a fully open source project, and contributions are welcome.
 
+### Contributors
+
+- [Göksel Uyulmaz](https://github.com/guyulmaz)
+
 ## Credits
 
 I believe that the image used in this demo app are royalty free. Images were downloaded from:
