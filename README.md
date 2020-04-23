@@ -2,15 +2,15 @@
 
 A Flutter project to test the REST API located at https://statsapi.mlb.com/. It uses [MobX](https://github.com/mobxjs/mobx) for state management.
 
-Project is compatible with Flutter web ([live demo](https://baseball-9d98f.web.app)) 
+Project is compatible with Flutter web ([live demo](https://baseball-9d98f.web.app)).
 
 ## Screenshots
 
 ### Pixel 2 (5.74 in, 1080×1920 px)
 
-Home Screen | Details Dialog
+Home Screen | Details Screen
 --- | ---
-![Main Screen](/screenshots/home_screen.png?raw=true "Main Screen") | ![Timer Dialog](/screenshots/details_screen.png?raw=true "Timer Dialog")
+![Home Screen](/screenshots/home_screen.png?raw=true "Home Screen") | ![Detail Screen](/screenshots/details_screen.png?raw=true "Detail Screen")
 
 ## Learn More on Flutter
 
