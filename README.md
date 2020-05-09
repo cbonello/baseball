@@ -1,6 +1,7 @@
 # Baseball
 
 [![Build](https://github.com/cbonello/baseball/workflows/Build/badge.svg)](https://github.com/cbonello/baseball/actions)
+[![codecov](https://codecov.io/gh/cbonello/baseball/branch/master/graph/badge.svg)](https://codecov.io/gh/cbonello/baseball)
 [![License: MIT](https://img.shields.io/badge/license-MIT-purple.svg)](https://opensource.org/licenses/MIT)
 
 A Flutter project to test the REST API located at https://statsapi.mlb.com/. It uses [MobX](https://github.com/mobxjs/mobx) for state management.
