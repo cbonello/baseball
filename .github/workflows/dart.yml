@@ -25,7 +25,7 @@ jobs:
     - name: Run tests
       run: flutter test test
     - name: Code Coverage
-      run: flutter test --coverage
+      run: flutter test test --coverage
     - name: Codecov
       uses: codecov/codecov-action@v1.0.7
       with:
