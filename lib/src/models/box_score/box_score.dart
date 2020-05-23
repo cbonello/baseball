@@ -1,7 +1,7 @@
 import 'package:baseball/src/models/helper.dart';
 import 'package:baseball/src/models/models.dart';
 import 'package:equatable/equatable.dart';
-import 'package:meta/meta.dart';
+import 'package:flutter/foundation.dart';
 
 class BoxScoreModel extends Equatable {
   const BoxScoreModel({

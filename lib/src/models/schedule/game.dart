@@ -1,6 +1,6 @@
 import 'package:baseball/src/models/helper.dart';
 import 'package:equatable/equatable.dart';
-import 'package:meta/meta.dart';
+import 'package:flutter/foundation.dart';
 
 class SCGameModel extends Equatable {
   const SCGameModel({

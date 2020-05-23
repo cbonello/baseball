@@ -1,6 +1,6 @@
 import 'package:baseball/src/models/models.dart';
 import 'package:baseball/src/services/mlb_api_client.dart';
-import 'package:meta/meta.dart';
+import 'package:flutter/foundation.dart';
 import 'package:mobx/mobx.dart';
 
 part 'schedule.g.dart';
