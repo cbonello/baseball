@@ -92,7 +92,4 @@ class LineScoreModel extends Equatable {
         strikes,
         outs,
       ];
-
-  @override
-  bool get stringify => true;
 }

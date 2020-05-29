@@ -40,7 +40,4 @@ class BSPlayerModel extends Equatable {
         battingStats,
         pitchingStats,
       ];
-
-  @override
-  bool get stringify => true;
 }

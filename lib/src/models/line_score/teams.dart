@@ -19,7 +19,4 @@ class LSTeamsModel extends Equatable {
 
   @override
   List<Object> get props => <Object>[home, away];
-
-  @override
-  bool get stringify => true;
 }

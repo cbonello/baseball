@@ -1,10 +1,13 @@
 import 'package:baseball/src/screens/splash.dart';
 import 'package:device_preview/device_preview.dart';
+import 'package:equatable/equatable.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart' as services;
 
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
+
+  EquatableConfig.stringify = true;
 
   services.SystemChrome.setPreferredOrientations(<services.DeviceOrientation>[
     services.DeviceOrientation.portraitUp,

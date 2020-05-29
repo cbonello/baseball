@@ -54,7 +54,4 @@ class BSBattingStatsModel extends Equatable {
         atBats,
         rbi,
       ];
-
-  @override
-  bool get stringify => true;
 }

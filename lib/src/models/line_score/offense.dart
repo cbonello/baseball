@@ -38,6 +38,4 @@ class LSOffenseModel extends Equatable {
 
   @override
   List<Object> get props => <Object>[batter, onDeck, inHole, first, pitcher, team];
-  @override
-  bool get stringify => true;
 }

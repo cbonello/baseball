@@ -65,7 +65,4 @@ class BoxScoreModel extends Equatable {
         awayBatters,
         homeBatters,
       ];
-
-  @override
-  bool get stringify => true;
 }

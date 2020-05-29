@@ -25,7 +25,4 @@ class SCScheduleModel extends Equatable {
 
   @override
   List<Object> get props => <Object>[games];
-
-  @override
-  bool get stringify => true;
 }

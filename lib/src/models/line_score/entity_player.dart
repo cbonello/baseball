@@ -21,7 +21,4 @@ class LSEntityPlayerModel extends Equatable {
 
   @override
   List<Object> get props => <Object>[id, fullName, link];
-
-  @override
-  bool get stringify => true;
 }

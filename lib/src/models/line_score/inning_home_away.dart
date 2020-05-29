@@ -24,7 +24,4 @@ class LSInningHomeAwayModel extends Equatable {
 
   @override
   List<Object> get props => <Object>[runs, hits, errors, leftOnBase];
-
-  @override
-  bool get stringify => true;
 }

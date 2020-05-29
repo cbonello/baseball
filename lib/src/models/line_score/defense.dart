@@ -80,7 +80,4 @@ class LSDefenseModel extends Equatable {
         inHole,
         team,
       ];
-
-  @override
-  bool get stringify => true;
 }

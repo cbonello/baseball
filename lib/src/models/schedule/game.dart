@@ -64,9 +64,6 @@ class SCGameModel extends Equatable {
         awayTeamNameShort,
       ];
 
-  @override
-  bool get stringify => true;
-
   static final Map<String, String> _teamNametoAbbr = <String, String>{
     'Arizona Diamondbacks': 'ARI',
     'Atlanta Braves': 'ATL',

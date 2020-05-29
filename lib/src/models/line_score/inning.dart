@@ -25,7 +25,4 @@ class LSInningModel extends Equatable {
 
   @override
   List<Object> get props => <Object>[num, ordinalNum, home, away];
-
-  @override
-  bool get stringify => true;
 }

@@ -69,7 +69,4 @@ class BSPitchingStatsModel extends Equatable {
         wins,
         losses,
       ];
-
-  @override
-  bool get stringify => true;
 }

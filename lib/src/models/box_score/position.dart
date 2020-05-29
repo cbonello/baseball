@@ -25,7 +25,4 @@ class BSPositionModel extends Equatable {
 
   @override
   List<Object> get props => <Object>[name, type, abbreviation];
-
-  @override
-  bool get stringify => true;
 }

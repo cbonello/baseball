@@ -21,7 +21,4 @@ class LSEntityTeamModel extends Equatable {
 
   @override
   List<Object> get props => <Object>[id, name, link];
-
-  @override
-  bool get stringify => true;
 }
