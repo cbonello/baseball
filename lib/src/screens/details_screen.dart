@@ -277,6 +277,7 @@ class ScoreSection extends StatelessWidget {
     if (lineScore?.innings?.isEmpty ?? true) {
       return null;
     }
+    // Score may not be available if game is in progress.
     return inning < (lineScore?.innings?.length ?? 0)
         ? lineScore.innings[inning]
         : null;
