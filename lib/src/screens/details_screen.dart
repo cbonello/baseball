@@ -18,7 +18,8 @@ class DetailsScreen extends StatefulWidget {
     return MaterialPageRoute<void>(
       builder: (_) {
         return Provider<LineScoreStore>(
-          create: (BuildContext _) => LineScoreStore(mlbApiClient: const MLBApiClient()),
+          create: (BuildContext _) =>
+              LineScoreStore(mlbApiClient: const MLBApiClient()),
           child: Provider<BoxScoreStore>(
               create: (BuildContext _) =>
                   BoxScoreStore(mlbApiClient: const MLBApiClient()),
@@ -99,9 +100,12 @@ class _DetailsScreenState extends State<DetailsScreen> {
                       const SizedBox(height: 15.0),
                       Stack(
                         children: <Widget>[
-                          ScoreSection(game: widget.game, lineScore: _lineScore),
-                          if (_lineScoreStore.state == LineScoreStoreState.loading)
-                            const Center(child: SpinKitWave(color: Color(0xFFFD5A1E))),
+                          ScoreSection(
+                              game: widget.game, lineScore: _lineScore),
+                          if (_lineScoreStore.state ==
+                              LineScoreStoreState.loading)
+                            const Center(
+                                child: SpinKitWave(color: Color(0xFFFD5A1E))),
                         ],
                       ),
                       const SizedBox(height: 50.0),
@@ -146,9 +150,15 @@ class ScoreSection extends StatelessWidget {
               child: Text(''),
             ),
             for (int i = 1; i < 10; i++) Center(child: Text('$i')),
-            const Center(child: Text('R', style: TextStyle(fontWeight: FontWeight.bold))),
-            const Center(child: Text('H', style: TextStyle(fontWeight: FontWeight.bold))),
-            const Center(child: Text('E', style: TextStyle(fontWeight: FontWeight.bold))),
+            const Center(
+                child:
+                    Text('R', style: TextStyle(fontWeight: FontWeight.bold))),
+            const Center(
+                child:
+                    Text('H', style: TextStyle(fontWeight: FontWeight.bold))),
+            const Center(
+                child:
+                    Text('E', style: TextStyle(fontWeight: FontWeight.bold))),
           ],
         ),
         TableRow(
@@ -158,18 +168,51 @@ class ScoreSection extends StatelessWidget {
               child: Text(game.homeTeamNameShort,
                   style: const TextStyle(fontWeight: FontWeight.bold)),
             ),
-            Center(child: Text(_getLineScoreInnings(0)?.home?.runs?.toString() ?? '0')),
-            Center(child: Text(_getLineScoreInnings(1)?.home?.runs?.toString() ?? '0')),
-            Center(child: Text(_getLineScoreInnings(2)?.home?.runs?.toString() ?? '0')),
-            Center(child: Text(_getLineScoreInnings(3)?.home?.runs?.toString() ?? '0')),
-            Center(child: Text(_getLineScoreInnings(4)?.home?.runs?.toString() ?? '0')),
-            Center(child: Text(_getLineScoreInnings(5)?.home?.runs?.toString() ?? '0')),
-            Center(child: Text(_getLineScoreInnings(6)?.home?.runs?.toString() ?? '0')),
-            Center(child: Text(_getLineScoreInnings(7)?.home?.runs?.toString() ?? '0')),
-            Center(child: Text(_getLineScoreInnings(8)?.home?.runs?.toString() ?? '0')),
-            Center(child: Text(lineScore?.homeTeamTotalRuns?.toString() ?? '0')),
-            Center(child: Text(lineScore?.homeTeamTotalHits?.toString() ?? '0')),
-            Center(child: Text(lineScore?.homeTeamTotalErrors?.toString() ?? '0')),
+            Center(
+              child:
+                  Text(_getLineScoreInnings(0)?.home?.runs?.toString() ?? '0'),
+            ),
+            Center(
+              child:
+                  Text(_getLineScoreInnings(1)?.home?.runs?.toString() ?? '0'),
+            ),
+            Center(
+              child:
+                  Text(_getLineScoreInnings(2)?.home?.runs?.toString() ?? '0'),
+            ),
+            Center(
+              child:
+                  Text(_getLineScoreInnings(3)?.home?.runs?.toString() ?? '0'),
+            ),
+            Center(
+              child:
+                  Text(_getLineScoreInnings(4)?.home?.runs?.toString() ?? '0'),
+            ),
+            Center(
+              child:
+                  Text(_getLineScoreInnings(5)?.home?.runs?.toString() ?? '0'),
+            ),
+            Center(
+              child:
+                  Text(_getLineScoreInnings(6)?.home?.runs?.toString() ?? '0'),
+            ),
+            Center(
+              child:
+                  Text(_getLineScoreInnings(7)?.home?.runs?.toString() ?? '0'),
+            ),
+            Center(
+              child:
+                  Text(_getLineScoreInnings(8)?.home?.runs?.toString() ?? '0'),
+            ),
+            Center(
+              child: Text(lineScore?.homeTeamTotalRuns?.toString() ?? '0'),
+            ),
+            Center(
+              child: Text(lineScore?.homeTeamTotalHits?.toString() ?? '0'),
+            ),
+            Center(
+              child: Text(lineScore?.homeTeamTotalErrors?.toString() ?? '0'),
+            ),
           ],
         ),
         TableRow(
@@ -179,18 +222,51 @@ class ScoreSection extends StatelessWidget {
               child: Text(game.awayTeamNameShort,
                   style: const TextStyle(fontWeight: FontWeight.bold)),
             ),
-            Center(child: Text(_getLineScoreInnings(0)?.away?.runs?.toString() ?? '0')),
-            Center(child: Text(_getLineScoreInnings(1)?.away?.runs?.toString() ?? '0')),
-            Center(child: Text(_getLineScoreInnings(2)?.away?.runs?.toString() ?? '0')),
-            Center(child: Text(_getLineScoreInnings(3)?.away?.runs?.toString() ?? '0')),
-            Center(child: Text(_getLineScoreInnings(4)?.away?.runs?.toString() ?? '0')),
-            Center(child: Text(_getLineScoreInnings(5)?.away?.runs?.toString() ?? '0')),
-            Center(child: Text(_getLineScoreInnings(6)?.away?.runs?.toString() ?? '0')),
-            Center(child: Text(_getLineScoreInnings(7)?.away?.runs?.toString() ?? '0')),
-            Center(child: Text(_getLineScoreInnings(8)?.away?.runs?.toString() ?? '0')),
-            Center(child: Text(lineScore?.awayTeamTotalRuns?.toString() ?? '0')),
-            Center(child: Text(lineScore?.awayTeamTotalHits?.toString() ?? '0')),
-            Center(child: Text(lineScore?.awayTeamTotalErrors?.toString() ?? '0')),
+            Center(
+              child:
+                  Text(_getLineScoreInnings(0)?.away?.runs?.toString() ?? '0'),
+            ),
+            Center(
+              child:
+                  Text(_getLineScoreInnings(1)?.away?.runs?.toString() ?? '0'),
+            ),
+            Center(
+              child:
+                  Text(_getLineScoreInnings(2)?.away?.runs?.toString() ?? '0'),
+            ),
+            Center(
+              child:
+                  Text(_getLineScoreInnings(3)?.away?.runs?.toString() ?? '0'),
+            ),
+            Center(
+              child:
+                  Text(_getLineScoreInnings(4)?.away?.runs?.toString() ?? '0'),
+            ),
+            Center(
+              child:
+                  Text(_getLineScoreInnings(5)?.away?.runs?.toString() ?? '0'),
+            ),
+            Center(
+              child:
+                  Text(_getLineScoreInnings(6)?.away?.runs?.toString() ?? '0'),
+            ),
+            Center(
+              child:
+                  Text(_getLineScoreInnings(7)?.away?.runs?.toString() ?? '0'),
+            ),
+            Center(
+              child:
+                  Text(_getLineScoreInnings(8)?.away?.runs?.toString() ?? '0'),
+            ),
+            Center(
+              child: Text(lineScore?.awayTeamTotalRuns?.toString() ?? '0'),
+            ),
+            Center(
+              child: Text(lineScore?.awayTeamTotalHits?.toString() ?? '0'),
+            ),
+            Center(
+              child: Text(lineScore?.awayTeamTotalErrors?.toString() ?? '0'),
+            ),
           ],
         ),
       ],
@@ -201,7 +277,9 @@ class ScoreSection extends StatelessWidget {
     if (lineScore?.innings?.isEmpty ?? true) {
       return null;
     }
-    return lineScore.innings[inning];
+    return inning < (lineScore?.innings?.length ?? 0)
+        ? lineScore.innings[inning]
+        : null;
   }
 }
 
@@ -220,11 +298,17 @@ class BattersStatsSection extends StatelessWidget {
     return DataTable(
       columnSpacing: 5.0,
       columns: const <DataColumn>[
-        DataColumn(label: Text('BATTERS', style: TextStyle(fontWeight: FontWeight.bold))),
-        DataColumn(label: Text('AB', style: TextStyle(fontWeight: FontWeight.bold))),
-        DataColumn(label: Text('R', style: TextStyle(fontWeight: FontWeight.bold))),
-        DataColumn(label: Text('H', style: TextStyle(fontWeight: FontWeight.bold))),
-        DataColumn(label: Text('RBI', style: TextStyle(fontWeight: FontWeight.bold))),
+        DataColumn(
+            label:
+                Text('BATTERS', style: TextStyle(fontWeight: FontWeight.bold))),
+        DataColumn(
+            label: Text('AB', style: TextStyle(fontWeight: FontWeight.bold))),
+        DataColumn(
+            label: Text('R', style: TextStyle(fontWeight: FontWeight.bold))),
+        DataColumn(
+            label: Text('H', style: TextStyle(fontWeight: FontWeight.bold))),
+        DataColumn(
+            label: Text('RBI', style: TextStyle(fontWeight: FontWeight.bold))),
       ],
       rows: <DataRow>[
         for (final BSPlayerModel player in players)
@@ -263,11 +347,16 @@ class PitchersStatsSection extends StatelessWidget {
       columnSpacing: 5.0,
       columns: const <DataColumn>[
         DataColumn(
-            label: Text('PITCHERS', style: TextStyle(fontWeight: FontWeight.bold))),
-        DataColumn(label: Text('IP', style: TextStyle(fontWeight: FontWeight.bold))),
-        DataColumn(label: Text('H', style: TextStyle(fontWeight: FontWeight.bold))),
-        DataColumn(label: Text('r', style: TextStyle(fontWeight: FontWeight.bold))),
-        DataColumn(label: Text('K', style: TextStyle(fontWeight: FontWeight.bold))),
+            label: Text('PITCHERS',
+                style: TextStyle(fontWeight: FontWeight.bold))),
+        DataColumn(
+            label: Text('IP', style: TextStyle(fontWeight: FontWeight.bold))),
+        DataColumn(
+            label: Text('H', style: TextStyle(fontWeight: FontWeight.bold))),
+        DataColumn(
+            label: Text('r', style: TextStyle(fontWeight: FontWeight.bold))),
+        DataColumn(
+            label: Text('K', style: TextStyle(fontWeight: FontWeight.bold))),
       ],
       rows: <DataRow>[
         for (final BSPlayerModel player in players)
