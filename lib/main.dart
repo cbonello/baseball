@@ -28,7 +28,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Baseball',
       debugShowCheckedModeBanner: false,
-      locale: DevicePreview.of(context).locale,
+      locale: DevicePreview.locale(context),
       builder: DevicePreview.appBuilder,
       theme: ThemeData(
         fontFamily: 'Lato',
